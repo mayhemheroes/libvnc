@@ -1,0 +1,30 @@
+# RFB / VNC server-side protocol dictionary for fuzz_server.
+# Handshake tokens
+"RFB 003.003\x0a"
+"RFB 003.005\x0a"
+"RFB 003.007\x0a"
+"RFB 003.008\x0a"
+"RFB "
+# Security types (client reply byte)
+sec_none="\x01"
+sec_vncauth="\x02"
+# ClientInit shared flag
+"\x01"
+# Client-to-server message type bytes
+msg_setpixelformat="\x00"
+msg_fixcolourmap="\x01"
+msg_setencodings="\x02"
+msg_fbupdatereq="\x03"
+msg_keyevent="\x04"
+msg_pointerevent="\x05"
+msg_clientcuttext="\x06"
+# Common encoding ids (big-endian s32)
+enc_raw="\x00\x00\x00\x00"
+enc_copyrect="\x00\x00\x00\x01"
+enc_rre="\x00\x00\x00\x02"
+enc_hextile="\x00\x00\x00\x05"
+enc_zlib="\x00\x00\x00\x06"
+enc_tight="\x00\x00\x00\x07"
+enc_zrle="\x00\x00\x00\x10"
+enc_cursor="\xff\xff\xff\x11"
+enc_desktopsize="\xff\xff\xff\x21"
